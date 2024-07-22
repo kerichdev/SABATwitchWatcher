@@ -132,6 +132,10 @@ setInterval(() => {
     });
 }, 60000);
 
+app.get('/', (req, res) => {
+    res.status(200).send('Hi! This is a Discord bot for tracking SABA streamers.\nYou can use the following endpoints:\n/twitch - check if we are connected to twitch.\n/discord - check if we are connected to discord.\n/status - get live status of all streamers.');
+});
+
 app.get('/twitch', (req, res) => {
     if (twitchToken) {
         res.status(200).json({ connected: true });
