@@ -156,6 +156,10 @@ app.get('/status', (req, res) => {
     res.status(200).json({ isLive });
 });
 
+app.get('/streamers', (req, res) => {
+    res.status(200).json({ streamers });
+});
+
 app.listen(port, () => {
     console.log(`Server is running on port ${port}`);
 });
